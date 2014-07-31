@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://pav3.cdyne.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pav3.cdyne.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://pav3.cdyne.com/Imports">
+      <xsd:import schemaLocation="http://pav3.cdyne.com/PavService.svc?xsd=xsd0" namespace="http://pav3.cdyne.com" />
+      <xsd:import schemaLocation="http://pav3.cdyne.com/PavService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://pav3.cdyne.com/PavService.svc?xsd=xsd2" namespace="pav3.cdyne.com" />
+      <xsd:import schemaLocation="http://pav3.cdyne.com/PavService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPavService_GetCongressionalDistrictByZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCongressionalDistrictByZip" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetCongressionalDistrictByZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCongressionalDistrictByZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetCityNamesForZipCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityNamesForZipCode" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetCityNamesForZipCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityNamesForZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetZipCodesForCityAndState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodesForCityAndState" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetZipCodesForCityAndState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodesForCityAndStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetUrbanizationListForZipCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUrbanizationListForZipCode" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetUrbanizationListForZipCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUrbanizationListForZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_VerifyAddressAdvanced_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressAdvanced" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_VerifyAddressAdvanced_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressAdvancedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_VerifyAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_VerifyAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetIntelligentMailBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntelligentMailBarcode" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetIntelligentMailBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntelligentMailBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetZipCodesWithinDistance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodesWithinDistance" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetZipCodesWithinDistance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodesWithinDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetZipCodesForFips_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodesForFips" />
+  </wsdl:message>
+  <wsdl:message name="IPavService_GetZipCodesForFips_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodesForFipsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPavService">
+    <wsdl:operation name="GetCongressionalDistrictByZip">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetCongressionalDistrictByZip" message="tns:IPavService_GetCongressionalDistrictByZip_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetCongressionalDistrictByZipResponse" message="tns:IPavService_GetCongressionalDistrictByZip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityNamesForZipCode">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetCityNamesForZipCode" message="tns:IPavService_GetCityNamesForZipCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetCityNamesForZipCodeResponse" message="tns:IPavService_GetCityNamesForZipCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCodesForCityAndState">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetZipCodesForCityAndState" message="tns:IPavService_GetZipCodesForCityAndState_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetZipCodesForCityAndStateResponse" message="tns:IPavService_GetZipCodesForCityAndState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUrbanizationListForZipCode">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetUrbanizationListForZipCode" message="tns:IPavService_GetUrbanizationListForZipCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetUrbanizationListForZipCodeResponse" message="tns:IPavService_GetUrbanizationListForZipCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddressAdvanced">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/VerifyAddressAdvanced" message="tns:IPavService_VerifyAddressAdvanced_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/VerifyAddressAdvancedResponse" message="tns:IPavService_VerifyAddressAdvanced_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAddress">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/VerifyAddress" message="tns:IPavService_VerifyAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/VerifyAddressResponse" message="tns:IPavService_VerifyAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntelligentMailBarcode">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetIntelligentMailBarcode" message="tns:IPavService_GetIntelligentMailBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetIntelligentMailBarcodeResponse" message="tns:IPavService_GetIntelligentMailBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCodesWithinDistance">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetZipCodesWithinDistance" message="tns:IPavService_GetZipCodesWithinDistance_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetZipCodesWithinDistanceResponse" message="tns:IPavService_GetZipCodesWithinDistance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCodesForFips">
+      <wsdl:input wsaw:Action="http://pav3.cdyne.com/IPavService/GetZipCodesForFips" message="tns:IPavService_GetZipCodesForFips_InputMessage" />
+      <wsdl:output wsaw:Action="http://pav3.cdyne.com/IPavService/GetZipCodesForFipsResponse" message="tns:IPavService_GetZipCodesForFips_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

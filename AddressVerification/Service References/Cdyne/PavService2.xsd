@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://pav3.cdyne.com" elementFormDefault="qualified" targetNamespace="http://pav3.cdyne.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pav3.cdyne.com/PavService.svc?xsd=xsd2" namespace="pav3.cdyne.com" />
+  <xs:element name="GetCongressionalDistrictByZip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCongressionalDistrictByZipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="pav3.cdyne.com" minOccurs="0" name="GetCongressionalDistrictByZipResult" nillable="true" type="q1:CongressionalDistrictResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCityNamesForZipCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCityNamesForZipCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="pav3.cdyne.com" minOccurs="0" name="GetCityNamesForZipCodeResult" nillable="true" type="q2:CityNamesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZipCodesForCityAndState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZipCodesForCityAndStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="pav3.cdyne.com" minOccurs="0" name="GetZipCodesForCityAndStateResult" nillable="true" type="q3:ZipCodesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUrbanizationListForZipCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUrbanizationListForZipCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="pav3.cdyne.com" minOccurs="0" name="GetUrbanizationListForZipCodeResult" nillable="true" type="q4:UrbanizationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressAdvanced">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="pav3.cdyne.com" minOccurs="0" name="Request" nillable="true" type="q5:PavRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressAdvancedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="pav3.cdyne.com" minOccurs="0" name="VerifyAddressAdvancedResult" nillable="true" type="q6:PavResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FirmOrRecipient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PrimaryAddressLine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SecondaryAddressLine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Urbanization" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="pav3.cdyne.com" minOccurs="0" name="VerifyAddressResult" nillable="true" type="q7:Address" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntelligentMailBarcode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BarcodeIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ServiceTypeIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MailerIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IntelligentMailBarcodeKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntelligentMailBarcodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="pav3.cdyne.com" minOccurs="0" name="GetIntelligentMailBarcodeResult" nillable="true" type="q8:IntelligentBarcodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZipCodesWithinDistance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Radius" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZipCodesWithinDistanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="pav3.cdyne.com" minOccurs="0" name="GetZipCodesWithinDistanceResult" nillable="true" type="q9:ZipCodesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZipCodesForFips">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fips" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZipCodesForFipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="pav3.cdyne.com" minOccurs="0" name="GetZipCodesForFipsResult" nillable="true" type="q10:ZipCodesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="pav3.cdyne.com" elementFormDefault="qualified" targetNamespace="pav3.cdyne.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pav3.cdyne.com/PavService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CongressionalDistrictResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CongressionalDistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CongressionalDistrictResponse" nillable="true" type="tns:CongressionalDistrictResponse" />
+  <xs:complexType name="CityNamesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityNames" nillable="true" type="tns:ArrayOfCity" />
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityNamesResponse" nillable="true" type="tns:CityNamesResponse" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="City">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMailing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="ZipCodesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ZipCodes" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZipCodesResponse" nillable="true" type="tns:ZipCodesResponse" />
+  <xs:complexType name="UrbanizationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UrbanizationList" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UrbanizationResponse" nillable="true" type="tns:UrbanizationResponse" />
+  <xs:complexType name="PavRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirmOrRecipient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryAddressLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnCaseSensitive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnCensusInfo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnCityAbbreviation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnGeoLocation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnLegislativeInfo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnMailingIndustryInfo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnResidentialIndicator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnStreetAbbreviated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SecondaryAddressLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Urbanization" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PavRequest" nillable="true" type="tns:PavRequest" />
+  <xs:complexType name="PavResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CensusInfo" nillable="true" type="tns:CensusInfo" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountyNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinanceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirmOrRecipient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeoLocationInfo" nillable="true" type="tns:GeoLocationInfo" />
+      <xs:element minOccurs="0" name="IntelligentMailBarcodeKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegislativeInfo" nillable="true" type="tns:LegislativeInfo" />
+      <xs:element minOccurs="0" name="MailingIndustryInfo" nillable="true" type="tns:MailingIndustryInfo" />
+      <xs:element minOccurs="0" name="MultipleMatches" nillable="true" type="tns:ArrayOfAddressInfo" />
+      <xs:element minOccurs="0" name="PMBDesignator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMBNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDirectional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostnetBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreDirectional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreferredCityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Primary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryDeliveryLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryHigh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialDeliveryIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Secondary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryAbbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryDeliveryLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryHigh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryLow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateAbbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Urbanization" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PavResponse" nillable="true" type="tns:PavResponse" />
+  <xs:complexType name="CensusInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CMSA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CensusBlockNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CensusTractNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIPS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMSA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CensusInfo" nillable="true" type="tns:CensusInfo" />
+  <xs:complexType name="GeoLocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvgLatitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvgLongitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromLatitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromLongitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasDaylightSavings" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToLatitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToLongitude" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoLocationInfo" nillable="true" type="tns:GeoLocationInfo" />
+  <xs:complexType name="LegislativeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CongressionalDistrictNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateLegislativeLower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateLegislativeUpper" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LegislativeInfo" nillable="true" type="tns:LegislativeInfo" />
+  <xs:complexType name="MailingIndustryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierRoute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckDigit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DeliveryPoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvConfirmationIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvCrmaIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvFootnote1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvFootnote2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvFootnote3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvNoStatIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DpvVacantIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ELOTAscDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ELOTSequenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EwsFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LACSFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LACSIndicator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LACSReturnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuiteLinkReturnCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MailingIndustryInfo" nillable="true" type="tns:MailingIndustryInfo" />
+  <xs:complexType name="ArrayOfAddressInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressInfo" nillable="true" type="tns:AddressInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressInfo" nillable="true" type="tns:ArrayOfAddressInfo" />
+  <xs:complexType name="AddressInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierRoute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinanceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Firm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plus4High" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plus4Low" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostDirectional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreDirectional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryHigh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryAbbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryHigh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryLow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressInfo" nillable="true" type="tns:AddressInfo" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirmNameOrRecipient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryAddressLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+      <xs:element minOccurs="0" name="SecondaryAddressLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateAbbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Urbanization" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="IntelligentBarcodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntelligentBarcodeResponse" nillable="true" type="tns:IntelligentBarcodeResponse" />
+</xs:schema>
